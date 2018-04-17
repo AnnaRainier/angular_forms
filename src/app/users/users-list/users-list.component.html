@@ -1,0 +1,18 @@
+<h2>List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users$ | async" [routerLink]="[user.id]">
+      <td>{{ user.name }}</td>
+      <td>{{ user.age }}</td>
+      <td><a [routerLink] = "['../', 'edit', user.id]">Edit</a></td>
+    </tr>
+  </tbody>
+</table>
+<a [routerLink]="['../add']"><button>Add user</button></a>
